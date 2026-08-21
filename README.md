@@ -1,22 +1,24 @@
 # DEVELOPER MANUAL
 
 ### THIS REPOSITORY CURRENTLY HAS 2 BRANCHES:
+
 - MAIN
 - DEV
 
 ---
 
 ### `MAIN` - the branch which you use to create bew branches with command:
+
 ```
 git checkout -b <branch-name>
 ```
+
 NEVER EVER MERGE TO THE MAIN WITHOUT FIRST MERGING TO THE `DEV` BRANCH!
 
 ---
 
 ### `DEV` - the branch which you use to create merge requests and merge other branches
+
 ALWAYS FIRST TEST THE FEATURE BY MERGING IT TO THE `DEV` BRANCH THEN OPEN MERGE REQUEST TO THE MAIN
-
-
 
 !!! ALWAYS REMEMBER TO SWITCH TO MAIN WHEN YOU ARE CREATING NEW BRANCH OTHERWISE IT WILL CAUSE PROBLEMS WHILE MERGING IT
