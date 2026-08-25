@@ -8,6 +8,16 @@ export interface Project {
 	tasks?: number;
 }
 
+export interface MyProject {
+	id: string;
+	title: string;
+	description: string;
+	isPrivate?: boolean;
+	isFeatured?: boolean;
+	color?: string;
+	avatarUrl?: string;
+}
+
 export const projects: Project[] = [
 	{
 		name: "Anor",
