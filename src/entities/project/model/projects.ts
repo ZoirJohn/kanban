@@ -7,7 +7,6 @@ export interface Project {
 	members?: number;
 	tasks?: number;
 }
-
 export const projects: Project[] = [
 	{
 		name: "Anor",
