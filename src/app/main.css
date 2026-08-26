@@ -3,3 +3,8 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+.logo img {
+	width: 2.2rem;
+	height: 2.2rem;
+	fill: #4c566a;
+}

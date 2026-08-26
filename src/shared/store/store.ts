@@ -1,5 +1,5 @@
 import { createStore } from "zustand";
-import { persist } from "zustand/middleware/persist";
+import { persist } from "zustand/middleware";
 
 export type TTokens = {
 	access_token: string;
