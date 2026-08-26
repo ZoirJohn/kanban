@@ -7,19 +7,33 @@ export type TTokens = {
 };
 
 export type TStore = {
-	tokens: {
-		access_token: string;
-		refresh_token: string;
-	};
+	tokens: TTokens;
 	setTokens: (tokens: TTokens) => void;
+	logout: () => void;
+};
+
+const initialTokens: TTokens = {
+	access_token: "",
+	refresh_token: "",
 };
 
 export const useKanbanStore = createStore<TStore>()(
 	persist(
 		(set) => ({
-			tokens: { access_token: "", refresh_token: "" },
-			setTokens: (tokens: TTokens) => set(tokens),
+			tokens: initialTokens,
+
+			setTokens: (tokens) =>
+				set({
+					tokens,
+				}),
+
+			logout: () =>
+				set({
+					tokens: initialTokens,
+				}),
 		}),
-		{ name: "tokens" }
+		{
+			name: "tokens",
+		}
 	)
 );

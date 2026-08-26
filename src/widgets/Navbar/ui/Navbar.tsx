@@ -11,7 +11,7 @@ export const Navbar = () => {
 	const token = useStore(useKanbanStore, (state) => state.tokens.access_token);
 	return (
 		<nav>
-			<Flex py={4} bg={"#d8dee9"} align={"center"} justify={"space-between"}>
+			<Flex py={4} px={8} bg={"#d8dee9"} align={"center"} justify={"space-between"}>
 				<Flex align={"center"}>
 					<Link className={"logo"} style={{ height: "37px", width: "35px" }} to={"/"}>
 						<Image src={logo} />
