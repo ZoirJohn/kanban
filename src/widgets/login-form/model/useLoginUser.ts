@@ -4,18 +4,19 @@ import type { ILogin } from "./type";
 import { auth } from "../api/auth";
 import { useKanbanStore } from "../../../shared/store/store";
 import { useStore } from "zustand";
+
 export const useLoginUser = () => {
-	const setToken = useStore(useKanbanStore, (state) => state.setTokens);
+	const setAuth = useStore(useKanbanStore, (state) => state.setAuth);
 
 	return useMutation({
 		mutationFn: (data: ILogin) => auth(data),
 
-		onSuccess: (e) => {
-			console.log(e.data);
+		onSuccess: (response) => {
+			console.log(response.data);
 
-			setToken({
-				refresh_token: e.data.refresh,
-				access_token: e.data.auth_token,
+			setAuth(response.data.id, {
+				refresh_token: response.data.refresh,
+				access_token: response.data.auth_token,
 			});
 
 			notifications.show({

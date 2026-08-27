@@ -1,12 +1,18 @@
 import { Anchor, Button, PasswordInput, Stack, TextInput } from "@mantine/core";
 import { useLoginUser } from "../model/useLoginUser";
 import { useState } from "react";
+import { useStore } from "zustand";
+import { useKanbanStore } from "../../../shared/store/store";
+import { Navigate } from "react-router";
 
 export const LoginForm = () => {
+	const accessToken = useStore(useKanbanStore, (state) => state.tokens.access_token);
 	const [username, setUsername] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
 	const auth = useLoginUser();
-
+	if (accessToken) {
+		return <Navigate to={"/"} replace />;
+	}
 	const handleLogin = () => {
 		auth.mutate({ username, password, type: "normal" });
 	};
@@ -42,6 +48,7 @@ export const LoginForm = () => {
 				onClick={() => handleLogin()}
 				c="#303344"
 				bg="#7ee4d8"
+				loading={auth.isPending}
 			>
 				LOGIN
 			</Button>

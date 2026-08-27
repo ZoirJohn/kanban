@@ -5,12 +5,23 @@ import {
 	RiSettings3Line,
 	RiLogoutBoxRLine,
 } from "@remixicon/react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useKanbanStore } from "../../../shared/store/store";
 import { useStore } from "zustand";
-
+import { useProfile } from "../model/useProfile";
 export const NavbarProfile = () => {
 	const logout = useStore(useKanbanStore, (d) => d.logout);
+	const userId = useStore(useKanbanStore, (state) => state.userId);
+	const navigate = useNavigate();
+	const { isLoading, data: profile } = useProfile(userId);
+	if (isLoading) {
+		return <div>loading...</div>;
+	}
+	const handleLogout = () => {
+		logout();
+		navigate("/login");
+	};
+
 	return (
 		<Menu trigger="hover" openDelay={100} closeDelay={200} shadow="md" width={200}>
 			<Menu.Target>
@@ -23,7 +34,7 @@ export const NavbarProfile = () => {
 					ml="1rem"
 					align="center"
 				>
-					<Avatar src="" />
+					<Avatar src={profile?.photo} />
 
 					<ActionIcon
 						variant="transparent"
@@ -61,7 +72,7 @@ export const NavbarProfile = () => {
 				<Menu.Item
 					color="red"
 					leftSection={<RiLogoutBoxRLine size={18} />}
-					onClick={() => logout()}
+					onClick={() => handleLogout()}
 				>
 					Log out
 				</Menu.Item>

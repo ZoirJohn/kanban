@@ -7,8 +7,10 @@ export type TTokens = {
 };
 
 export type TStore = {
+	userId: number | null;
 	tokens: TTokens;
-	setTokens: (tokens: TTokens) => void;
+
+	setAuth: (userId: number, tokens: TTokens) => void;
 	logout: () => void;
 };
 
@@ -20,20 +22,23 @@ const initialTokens: TTokens = {
 export const useKanbanStore = createStore<TStore>()(
 	persist(
 		(set) => ({
+			userId: null,
 			tokens: initialTokens,
 
-			setTokens: (tokens) =>
+			setAuth: (userId, tokens) =>
 				set({
+					userId,
 					tokens,
 				}),
 
 			logout: () =>
 				set({
+					userId: null,
 					tokens: initialTokens,
 				}),
 		}),
 		{
-			name: "tokens",
+			name: "kanban-auth",
 		}
 	)
 );
