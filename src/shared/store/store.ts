@@ -1,5 +1,5 @@
 import { createStore } from "zustand";
-import { persist } from "zustand/middleware/persist";
+import { persist } from "zustand/middleware";
 
 export type TTokens = {
 	access_token: string;
@@ -7,19 +7,38 @@ export type TTokens = {
 };
 
 export type TStore = {
-	tokens: {
-		access_token: string;
-		refresh_token: string;
-	};
-	setTokens: (tokens: TTokens) => void;
+	userId: number | null;
+	tokens: TTokens;
+
+	setAuth: (userId: number, tokens: TTokens) => void;
+	logout: () => void;
+};
+
+const initialTokens: TTokens = {
+	access_token: "",
+	refresh_token: "",
 };
 
 export const useKanbanStore = createStore<TStore>()(
 	persist(
 		(set) => ({
-			tokens: { access_token: "", refresh_token: "" },
-			setTokens: (tokens: TTokens) => set(tokens),
+			userId: null,
+			tokens: initialTokens,
+
+			setAuth: (userId, tokens) =>
+				set({
+					userId,
+					tokens,
+				}),
+
+			logout: () =>
+				set({
+					userId: null,
+					tokens: initialTokens,
+				}),
 		}),
-		{ name: "tokens" }
+		{
+			name: "kanban-auth",
+		}
 	)
 );
