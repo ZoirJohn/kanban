@@ -13,7 +13,7 @@ createRoot(document.getElementById("wrapper")!).render(
 	<StrictMode>
 		<QueryClientProvider client={queryClient}>
 			<MantineProvider>
-				<Notifications />
+				<Notifications style={{ position: "fixed", top: "50px", right: "5px" }} />
 				<App />
 			</MantineProvider>
 		</QueryClientProvider>
