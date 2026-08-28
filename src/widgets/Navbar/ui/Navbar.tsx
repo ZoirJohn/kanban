@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { Button, Flex, Image } from "@mantine/core";
-import { RiFolder2Line } from "@remixicon/react";
+import { Flex, Image } from "@mantine/core";
 import { useKanbanStore } from "../../../shared/store/store";
 import logo from "../../../shared/assets/images/logo.svg";
 import { useStore } from "zustand";
 import { NavbarActions } from "./NavbarActions";
 import { NavbarProfile } from "./NavbarProfile";
 import { NavbarAuth } from "./NavbarAuth";
+import { NavProjects } from "./NavProjects";
 export const Navbar = () => {
 	const token = useStore(useKanbanStore, (state) => state.tokens.access_token);
 	return (
@@ -16,15 +16,7 @@ export const Navbar = () => {
 					<Link className={"logo"} style={{ height: "37px", width: "35px" }} to={"/"}>
 						<Image src={logo} />
 					</Link>
-					{token && (
-						<Button
-							size={"compact-xs"}
-							variant={"subtle"}
-							leftSection={<RiFolder2Line size={18} />}
-						>
-							Projects
-						</Button>
-					)}
+					{token && <NavProjects />}
 				</Flex>
 				<Flex align={"center"}>
 					{token ? (

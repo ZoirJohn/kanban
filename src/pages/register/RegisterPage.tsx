@@ -1,10 +1,10 @@
 import { TaigaLogo } from "@/shared/ui/TaigaLogo/TaigaLogo";
-import { LoginForm, RegisterPrompt, SocialLogin } from "@/widgets";
+import { RegisterForm, LoginPrompt, SocialLogin } from "@/widgets";
 import { Center, Container, Stack, Text } from "@mantine/core";
 
-export const LoginPage = () => {
+export function RegisterPage() {
 	return (
-		<Center mih="90vh">
+		<Center mih={"90vh"}>
 			<Container w="100%" maw={400} px="md">
 				<Stack gap={0} align="stretch">
 					<TaigaLogo />
@@ -13,17 +13,13 @@ export const LoginPage = () => {
 						Taiga
 					</Text>
 
-					<Text ta="center" fz={28} fw={400} c="#343744" mb={32}>
-						LOVE YOUR PROJECT
-					</Text>
-
-					<LoginForm />
+					<RegisterForm />
 
 					<SocialLogin />
 
-					<RegisterPrompt />
+					<LoginPrompt />
 				</Stack>
 			</Container>
 		</Center>
 	);
-};
+}

@@ -9,26 +9,12 @@ export const SocialLogin = () => {
 			</Text>
 
 			<Stack gap={8}>
-				<Button
-					fullWidth
-					h={34}
-					radius={3}
-					fw={400}
-					leftSection={<RiGithubFill />}
-					bg="#464657"
-				>
-					SIGN IN WITH GITHUB
+				<Button fullWidth h={34} radius={3} fw={400} bg="#464657">
+					<RiGithubFill /> SIGN IN WITH GITHUB
 				</Button>
 
-				<Button
-					fullWidth
-					h={34}
-					radius={3}
-					fw={400}
-					bg="#464657"
-					leftSection={<RiGitlabFill />}
-				>
-					SIGN IN WITH GITLAB
+				<Button fullWidth h={34} radius={3} fw={400} bg="#464657">
+					<RiGitlabFill /> SIGN IN WITH GITLAB
 				</Button>
 			</Stack>
 		</>

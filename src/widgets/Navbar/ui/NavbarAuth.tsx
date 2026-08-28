@@ -8,7 +8,7 @@ export const NavbarAuth = () => {
 				Login
 			</Link>
 
-			<Link to="/signup" style={{ color: "#008aa8", fontSize: "15px" }}>
+			<Link to="/register" style={{ color: "#008aa8", fontSize: "15px" }}>
 				Sign Up
 			</Link>
 		</Flex>

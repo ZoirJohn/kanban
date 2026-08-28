@@ -5,7 +5,7 @@ export function MainLayout() {
 	return (
 		<>
 			<Navbar />
-			<Container>
+			<Container size={"xl"}>
 				<Outlet />
 			</Container>
 		</>
