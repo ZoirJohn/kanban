@@ -4,7 +4,7 @@ import type { IRegister } from "../model/type";
 import { useRegisterUser } from "../model/useRegisterUser";
 import { useStore } from "zustand";
 import { useKanbanStore } from "@/shared/store/store";
-import { Navigate } from "react-router";
+import { Navigate } from "react-router-dom";
 
 export const RegisterForm = () => {
 	const { mutate: register, isPending: loading } = useRegisterUser();

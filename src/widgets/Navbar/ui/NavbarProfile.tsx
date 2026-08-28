@@ -5,10 +5,10 @@ import {
 	RiSettings3Line,
 	RiLogoutBoxRLine,
 } from "@remixicon/react";
-import { Link, useNavigate } from "react-router";
-import { useKanbanStore } from "../../../shared/store/store";
+import { Link, useNavigate } from "react-router-dom";
 import { useStore } from "zustand";
 import { useProfile } from "../model/useProfile";
+import { useKanbanStore } from "@/shared/store/store.ts";
 export const NavbarProfile = () => {
 	const logout = useStore(useKanbanStore, (d) => d.logout);
 	const userId = useStore(useKanbanStore, (state) => state.userId);

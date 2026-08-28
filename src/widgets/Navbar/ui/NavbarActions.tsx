@@ -5,7 +5,7 @@ import {
 	RiNotification3Line,
 	RiBubbleChartFill,
 } from "@remixicon/react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 export const NavbarActions = () => {
 	return (

@@ -1,5 +1,5 @@
 import { Anchor, Group } from "@mantine/core";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 export const LoginPrompt = () => {
 	return (
