@@ -1,14 +1,16 @@
 import { Paper, Group, Title, Button, Grid, Stack, Text, Divider } from "@mantine/core";
 import { IconPlus } from "@tabler/icons-react";
-import type { MyProject } from "../../../entities/project/model/projects.ts";
 import { ProjectCard } from "../../../entities/project/ui/project-card/ProjectCard.tsx";
 import { Link } from "react-router-dom";
+import { useProject } from "@/entities/index.ts";
+import { useStore } from "zustand";
+import { useKanbanStore } from "@/shared/store/store.ts";
 
-interface ProjectsListProps {
-	projects: MyProject[];
-}
+export const ProjectsList = () => {
+	const userId = useStore(useKanbanStore, (state) => state.userId);
 
-export const ProjectsList = ({ projects }: ProjectsListProps) => {
+	const { data: projects } = useProject(userId);
+
 	return (
 		<Stack p="md">
 			<Paper bg="#f2f4f8" p="md" radius={0}>
@@ -40,7 +42,7 @@ export const ProjectsList = ({ projects }: ProjectsListProps) => {
 			<Grid>
 				<Grid.Col span={{ base: 12, md: 9 }}>
 					<Stack gap={0}>
-						{projects.map((project, index) => (
+						{projects?.map((project, index) => (
 							<Stack gap={0} key={project.id}>
 								<ProjectCard project={project} />
 								{index < projects.length - 1 && <Divider color="gray.2" />}

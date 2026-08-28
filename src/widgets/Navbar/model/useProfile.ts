@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { getUser } from "../api/GetProfile";
+import { getUser } from "@/entities";
 
 export const useProfile = (userId: number | null) => {
 	return useQuery({
