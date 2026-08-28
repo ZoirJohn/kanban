@@ -2,7 +2,7 @@ import { Anchor, Button, PasswordInput, Stack, TextInput } from "@mantine/core";
 import { useLoginUser } from "../model/useLoginUser";
 import { useState } from "react";
 import { useStore } from "zustand";
-import { useKanbanStore } from "../../../shared/store/store";
+import { useKanbanStore } from "@/shared/store/store";
 import { Navigate } from "react-router";
 
 export const LoginForm = () => {

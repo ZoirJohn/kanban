@@ -21,7 +21,7 @@ export const NavbarProfile = () => {
 		logout();
 		navigate("/login");
 	};
-
+	const mainAva = `https://www.gravatar.com/avatar/${profile?.gravatar_id}?s=200&d=https%3A%2F%2Ftree.taiga.io%2Fv-1778772818558%2Fimages%2Fuser-avatars%2Fuser-avatar-04.png`;
 	return (
 		<Menu trigger="hover" openDelay={100} closeDelay={200} shadow="md" width={200}>
 			<Menu.Target>
@@ -34,7 +34,7 @@ export const NavbarProfile = () => {
 					ml="1rem"
 					align="center"
 				>
-					<Avatar src={profile?.photo} />
+					<Avatar src={profile?.photo ? profile?.photo : mainAva} />
 
 					<ActionIcon
 						variant="transparent"
