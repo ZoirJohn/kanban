@@ -43,3 +43,9 @@ export const TEMPLATES: TemplateOption[] = [
 		icon: IconUpload,
 	},
 ];
+export interface ICreateProject {
+	is_private: boolean;
+	creation_template: number;
+	name: string;
+	description: string;
+}

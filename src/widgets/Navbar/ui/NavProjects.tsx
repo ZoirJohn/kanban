@@ -1,10 +1,10 @@
 import { Avatar, Button, Loader, Menu } from "@mantine/core";
 import { RiFocusMode, RiFolder2Line } from "@remixicon/react";
 import { Link } from "react-router-dom";
-import { useProject } from "../model/useProject";
 import { useKanbanStore } from "@/shared/store/store";
 import { useStore } from "zustand";
 import { IconPlus } from "@tabler/icons-react";
+import { useProject } from "@/entities";
 export function NavProjects() {
 	const userId = useStore(useKanbanStore, (state) => state.userId);
 

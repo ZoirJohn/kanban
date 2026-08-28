@@ -1,5 +1,5 @@
 import { $api } from "../../../shared/api/axios";
-import type { IProject, IUser } from "../model/type";
+import type { IProject, IUser } from "../../../widgets/Navbar/model/type";
 
 export const getUser = async (userId: number | null): Promise<IUser> => {
 	const response = await $api.get(`/users/${userId}`);
