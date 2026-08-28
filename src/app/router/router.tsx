@@ -1,6 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import { MainLayout } from "../layouts/MainLayout";
-import { LoginPage, RegisterPage } from "@/pages";
+import {
+	CreateNewProjectPage,
+	CreateProjectPage,
+	HomePage,
+	LoginPage,
+	ProjectsPage,
+	RegisterPage,
+} from "@/pages";
 export const router = createBrowserRouter([
 	{
 		path: "/",
@@ -8,7 +15,7 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				path: "",
-				element: <div>main</div>,
+				element: <HomePage />,
 			},
 
 			{
@@ -20,18 +27,21 @@ export const router = createBrowserRouter([
 				element: <RegisterPage />,
 			},
 			{
-				path: "project",
-				element: <div>main</div>,
+				path: "projects",
+				element: <ProjectsPage />,
 			},
 			{
 				path: "project/:id",
 				element: <div>projects:id</div>,
 			},
 			{
-				path: "project/new",
-				element: <div>projects:id</div>,
+				path: "projects/new",
+				element: <CreateProjectPage />,
 			},
-
+			{
+				path: "projects/new/kanban",
+				element: <CreateNewProjectPage />,
+			},
 			{
 				path: "project/:slug/timeline",
 				element: <div>projects:id</div>,

@@ -2,6 +2,7 @@ import { Paper, Group, Title, Button, Grid, Stack, Text, Divider } from "@mantin
 import { IconPlus } from "@tabler/icons-react";
 import type { MyProject } from "../../../entities/project/model/projects.ts";
 import { ProjectCard } from "../../../entities/project/ui/project-card/ProjectCard.tsx";
+import { Link } from "react-router-dom";
 
 interface ProjectsListProps {
 	projects: MyProject[];
@@ -15,22 +16,24 @@ export const ProjectsList = ({ projects }: ProjectsListProps) => {
 					<Title order={3} c="teal.8" fw={400}>
 						My projects
 					</Title>
-					<Button
-						leftSection={<IconPlus size={16} />}
-						bg="#66e0d0"
-						c="gray.9"
-						radius={0}
-						fw={600}
-						styles={{
-							root: {
-								"&:hover": {
-									backgroundColor: "#4cd3c1",
+					<Link to="/projects/new/">
+						<Button
+							leftSection={<IconPlus size={16} />}
+							bg="#66e0d0"
+							c="gray.9"
+							radius={0}
+							fw={600}
+							styles={{
+								root: {
+									"&:hover": {
+										backgroundColor: "#4cd3c1",
+									},
 								},
-							},
-						}}
-					>
-						NEW PROJECT
-					</Button>
+							}}
+						>
+							NEW PROJECT
+						</Button>
+					</Link>
 				</Group>
 			</Paper>
 
