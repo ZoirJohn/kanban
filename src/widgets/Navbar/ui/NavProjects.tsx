@@ -1,6 +1,6 @@
 import { Avatar, Button, Loader, Menu } from "@mantine/core";
 import { RiAddLine, RiFocusMode, RiFolder2Line } from "@remixicon/react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { useProject } from "../model/useProject";
 import { useKanbanStore } from "@/shared/store/store";
 import { useStore } from "zustand";
