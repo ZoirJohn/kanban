@@ -3,7 +3,7 @@ import { useLoginUser } from "../model/useLoginUser";
 import { useState } from "react";
 import { useStore } from "zustand";
 import { useKanbanStore } from "@/shared/store/store";
-import { Navigate } from "react-router";
+import { Navigate } from "react-router-dom";
 
 export const LoginForm = () => {
 	const accessToken = useStore(useKanbanStore, (state) => state.tokens.access_token);

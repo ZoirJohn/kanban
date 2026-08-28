@@ -20,7 +20,7 @@ const MOCK_PROJECTS: MyProject[] = [
 	},
 ];
 
-export default function ProjectsPage() {
+export function ProjectsPage() {
 	return (
 		<Container>
 			<ProjectsList projects={MOCK_PROJECTS} />
