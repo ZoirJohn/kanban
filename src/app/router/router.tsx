@@ -7,6 +7,7 @@ import {
 	LoginPage,
 	ProjectsPage,
 	RegisterPage,
+	TasksPage,
 } from "@/pages";
 export const router = createBrowserRouter([
 	{
@@ -17,7 +18,6 @@ export const router = createBrowserRouter([
 				path: "",
 				element: <HomePage />,
 			},
-
 			{
 				path: "login",
 				element: <LoginPage />,
@@ -45,6 +45,10 @@ export const router = createBrowserRouter([
 			{
 				path: "project/:slug/timeline",
 				element: <div>projects:id</div>,
+			},
+			{
+				path: "tasks",
+				element: <TasksPage />,
 			},
 		],
 	},
