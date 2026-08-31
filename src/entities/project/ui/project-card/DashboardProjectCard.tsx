@@ -15,7 +15,7 @@ export const DashboardProjectCard = ({ project }: ProjectCardProps) => {
 		<Box
 			p="md"
 			component={Link}
-			to={"/projects/" + project.slug}
+			to={"/projects/" + project.slug + "/kanban"}
 			style={{
 				borderRadius: 6,
 				transition: "background-color 0.15s ease",

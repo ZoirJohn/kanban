@@ -4,4 +4,7 @@ export { ProjectsPage } from "./project/ui/ProjectsPage";
 export { CreateNewProjectPage } from "./create-new-project/ui/CreateNewProjectPage";
 export { CreateProjectPage } from "./create-project/ui/CreateProjectPage";
 export { HomePage } from "./home-page/ui/HomePage";
-export { TasksPage } from "./tasks/ui/TasksPage.tsx";
+export { KanbanPage } from "./Kanban/KanbanPage/KanbanPage";
+export { Team } from "./Kanban/Team/Team";
+export { TimeLine } from "./Kanban/Timeline/TimeLine";
+export { KanbanTask } from "./Kanban/KanbanTask/KanbanTask";

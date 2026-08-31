@@ -4,10 +4,13 @@ import {
 	CreateNewProjectPage,
 	CreateProjectPage,
 	HomePage,
+	KanbanPage,
+	KanbanTask,
 	LoginPage,
 	ProjectsPage,
 	RegisterPage,
-	TasksPage,
+	Team,
+	TimeLine,
 } from "@/pages";
 export const router = createBrowserRouter([
 	{
@@ -18,6 +21,7 @@ export const router = createBrowserRouter([
 				path: "",
 				element: <HomePage />,
 			},
+
 			{
 				path: "login",
 				element: <LoginPage />,
@@ -31,8 +35,22 @@ export const router = createBrowserRouter([
 				element: <ProjectsPage />,
 			},
 			{
-				path: "project/:id",
-				element: <div>projects:id</div>,
+				path: "projects/:id",
+				element: <KanbanPage />,
+				children: [
+					{
+						index: true,
+						element: <TimeLine />,
+					},
+					{
+						path: "kanban",
+						element: <KanbanTask />,
+					},
+					{
+						path: "team",
+						element: <Team />,
+					},
+				],
 			},
 			{
 				path: "projects/new",
@@ -45,10 +63,6 @@ export const router = createBrowserRouter([
 			{
 				path: "project/:slug/timeline",
 				element: <div>projects:id</div>,
-			},
-			{
-				path: "tasks",
-				element: <TasksPage />,
 			},
 		],
 	},

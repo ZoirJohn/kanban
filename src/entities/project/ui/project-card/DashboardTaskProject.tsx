@@ -1,15 +1,12 @@
 import { Box, Flex, Image, Stack, Text } from "@mantine/core";
 import { IconChevronRight } from "@tabler/icons-react";
 import { type ITask } from "../../model/projects";
-
 interface DutyListProps {
 	duties: ITask[];
 }
-
 interface DutyItemProps {
 	duty: ITask;
 }
-
 export const DashboardTaskProject = ({ duties }: DutyListProps) => {
 	return (
 		<Stack gap={0}>
@@ -33,7 +30,6 @@ export const DashboardTaskProject = ({ duties }: DutyListProps) => {
 		</Stack>
 	);
 };
-
 const DutyItem = ({ duty }: DutyItemProps) => {
 	const initials = duty.project_extra_info.name.slice(0, 2).toUpperCase();
 

@@ -35,9 +35,6 @@ export const ProjectForm = () => {
 		console.log(values);
 		mutate(values);
 	};
-	// useEffect(() => {
-	// 	navigate('/projects/')
-	// }, [isSuccess])
 
 	return (
 		<form onSubmit={form.onSubmit(handleSubmit)}>

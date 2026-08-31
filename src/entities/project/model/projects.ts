@@ -37,3 +37,62 @@ export const projects: Project[] = [
 		members: 4,
 	},
 ];
+export type IAssignedToExtraInfo = {
+	username: string;
+	full_name_display: string;
+	photo: string | null;
+	big_photo: string | null;
+	gravatar_id: string;
+	is_active: boolean;
+	id: number;
+};
+
+export type IStatusExtraInfo = {
+	name: string;
+	color: string;
+	is_closed: boolean;
+};
+
+export type IProjectExtraInfo = {
+	name: string;
+	slug: string;
+	logo_small_url: string | null;
+	id: number;
+};
+
+export type ITask = {
+	due_date: string | null;
+	due_date_reason: string;
+	due_date_status: string;
+
+	assigned_to: number;
+	assigned_to_extra_info: IAssignedToExtraInfo;
+
+	status: number;
+	status_extra_info: IStatusExtraInfo;
+
+	project: number;
+	project_extra_info: IProjectExtraInfo;
+
+	id: number;
+	ref: number;
+	milestone: number | null;
+
+	is_closed: boolean;
+
+	created_date: string;
+	modified_date: string;
+	finish_date: string | null;
+
+	subject: string;
+
+	client_requirement: boolean;
+	team_requirement: boolean;
+
+	external_reference: string | null;
+
+	version: number;
+
+	is_blocked: boolean;
+	blocked_note: string;
+};

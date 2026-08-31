@@ -36,7 +36,7 @@ export function NavProjects() {
 						return (
 							<Menu.Item
 								component={Link}
-								to={e.slug}
+								to={`/projects/${e.slug}/kanban`}
 								leftSection={
 									<Avatar bg={"rgb(152, 224, 168)"} radius={2} src={mainAva} />
 								}
