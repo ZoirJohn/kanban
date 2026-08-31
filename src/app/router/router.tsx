@@ -5,10 +5,10 @@ import {
 	CreateProjectPage,
 	HomePage,
 	KanbanPage,
+	KanbanTask,
 	LoginPage,
 	ProjectsPage,
 	RegisterPage,
-	TasksPage,
 	Team,
 	TimeLine,
 } from "@/pages";
@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
 					},
 					{
 						path: "kanban",
-						element: <TasksPage />,
+						element: <KanbanTask />,
 					},
 					{
 						path: "team",
