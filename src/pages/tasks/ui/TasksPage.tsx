@@ -5,7 +5,7 @@ const TASK_TYPES = ["new", "ready", "in progress", "ready for test", "done", "ar
 
 export function TasksPage() {
 	return (
-		<Grid mt={16} gap={4}>
+		<Grid mt={16} gap={4} p={20}>
 			{TASK_TYPES.map((type) => {
 				return (
 					<Grid.Col span={2}>
