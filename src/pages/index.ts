@@ -7,4 +7,4 @@ export { HomePage } from "./home-page/ui/HomePage";
 export { KanbanPage } from "./Kanban/KanbanPage/KanbanPage";
 export { Team } from "./Kanban/Team/Team";
 export { TimeLine } from "./Kanban/Timeline/TimeLine";
-export { TasksPage } from "./tasks/ui/TasksPage";
+export { KanbanTask } from "./Kanban/KanbanTask/KanbanTask";
