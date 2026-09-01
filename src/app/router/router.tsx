@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
 				element: <KanbanPage />,
 				children: [
 					{
-						index: true,
+						path: "timeline",
 						element: <TimeLine />,
 					},
 					{

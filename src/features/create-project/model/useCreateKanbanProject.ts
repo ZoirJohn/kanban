@@ -10,7 +10,6 @@ export const useCreateKanbanProject = () => {
 		mutationFn: (e: ICreateProject) => creteProjectApi(e),
 		onError: (error) => {
 			if (axios.isAxiosError(error)) {
-				console.log(error.response?.data);
 				notifications.show({
 					message: error.response?.data?._error_message ?? error.message,
 					color: "red",

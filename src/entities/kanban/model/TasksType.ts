@@ -1,5 +1,6 @@
 export interface ITaskStatus {
 	name: string;
+	id: number;
 	color: string;
 	is_closed: boolean;
 }
