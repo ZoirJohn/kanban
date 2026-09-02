@@ -7,12 +7,13 @@ import { MantineProvider } from "@mantine/core";
 import App from "./App.tsx";
 import "./main.css";
 import { Notifications } from "@mantine/notifications";
+import { ModalsProvider } from "@mantine/modals";
 export const queryClient = new QueryClient();
-
 createRoot(document.getElementById("wrapper")!).render(
 	<StrictMode>
 		<QueryClientProvider client={queryClient}>
 			<MantineProvider>
+				<ModalsProvider />
 				<Notifications style={{ position: "fixed", top: "50px", right: "5px" }} />
 				<App />
 			</MantineProvider>

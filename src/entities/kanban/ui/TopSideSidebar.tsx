@@ -8,8 +8,6 @@ interface TopProps {
 export function ToptSideSidebar({ collapsed }: TopProps) {
 	const { id } = useParams();
 	const { data } = useKanban(id);
-	console.log(data);
-	console.log(id);
 	const mainAva = `https://tree.taiga.io/v-1778772818558/images/project-logos/project-logo-05.png`;
 
 	return (
@@ -22,7 +20,7 @@ export function ToptSideSidebar({ collapsed }: TopProps) {
 						width: "100%",
 					}}
 					component={Link}
-					to=""
+					to="timeline"
 				>
 					<Group gap="sm" justify={collapsed ? "center" : "flex-start"} wrap="nowrap">
 						<Avatar

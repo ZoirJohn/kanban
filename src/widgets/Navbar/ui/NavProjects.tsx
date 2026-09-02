@@ -9,7 +9,6 @@ export function NavProjects() {
 	const userId = useStore(useKanbanStore, (state) => state.userId);
 
 	const { data, isLoading } = useProject(userId);
-	console.log("kk data:", data);
 
 	return (
 		<Menu trigger="hover" openDelay={100} closeDelay={200} shadow="md" width={200}>

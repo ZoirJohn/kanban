@@ -32,7 +32,6 @@ export const ProjectForm = () => {
 	});
 
 	const handleSubmit = (values: ICreateProject) => {
-		console.log(values);
 		mutate(values);
 	};
 

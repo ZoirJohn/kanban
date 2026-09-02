@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "Ubuntu Sans", sans-serif;
 }
 .logo img {
 	width: 2.2rem;
@@ -10,4 +13,14 @@
 }
 a {
 	text-decoration: none;
+}
+.bar {
+	background: none;
+	outline: none;
+	border: none;
+	width: 20px;
+	color: #008aa8;
+}
+.bar:hover {
+	background: #d8dee9;
 }

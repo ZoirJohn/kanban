@@ -1,8 +1,13 @@
 import "@mantine/core/styles.css";
+import "@mantine/modals/styles.css";
 
 import { MantineProvider } from "@mantine/core";
-import * as React from "react";
+import { ModalsProvider } from "@mantine/modals";
 
 export function AppMantineProvider({ children }: { children: React.ReactNode }) {
-	return <MantineProvider>{children}</MantineProvider>;
+	return (
+		<MantineProvider>
+			<ModalsProvider>{children}</ModalsProvider>
+		</MantineProvider>
+	);
 }

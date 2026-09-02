@@ -12,6 +12,7 @@
 		"prepare": "husky"
 	},
 	"dependencies": {
+		"@hello-pangea/dnd": "^18.0.1",
 		"@mantine/carousel": "^9.5.2",
 		"@mantine/charts": "^9.5.2",
 		"@mantine/code-highlight": "^9.5.2",
@@ -20,7 +21,7 @@
 		"@mantine/dropzone": "^9.5.2",
 		"@mantine/form": "^9.5.2",
 		"@mantine/hooks": "^9.5.2",
-		"@mantine/modals": "^9.5.2",
+		"@mantine/modals": "^9.6.0",
 		"@mantine/notifications": "^9.5.2",
 		"@mantine/nprogress": "^9.5.2",
 		"@mantine/spotlight": "^9.5.2",

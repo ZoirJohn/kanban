@@ -12,8 +12,6 @@ export const useRegisterUser = () => {
 		mutationFn: (data: IRegister) => auth(data),
 
 		onSuccess: (response) => {
-			console.log(response.data);
-
 			setAuth(response.data.id, {
 				refresh_token: response.data.refresh,
 				access_token: response.data.auth_token,
