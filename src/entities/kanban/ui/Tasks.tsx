@@ -41,7 +41,6 @@ export default function Tasks({ taskData, type }: TaskProps) {
 					ref={provided.innerRef}
 				>
 					<Paper bg="transparent">
-						{/* gap={10} orqali tasklar bir-biridan 10px oraliqda turadi */}
 						<Stack p={4} gap={10}>
 							{taskData.map((task, index) => {
 								return (
@@ -61,7 +60,6 @@ export default function Tasks({ taskData, type }: TaskProps) {
 												style={{
 													position: "relative",
 													overflow: "hidden",
-													// Sudrab ketayotganda kartochka ko'tarilib ko'rinishi uchun soya
 													boxShadow: snapshot.isDragging
 														? "0 8px 20px rgba(0,0,0,0.2)"
 														: "0 1px 3px rgba(0,0,0,0.05)",

@@ -7,10 +7,7 @@ import { useKanban } from "@/entities/kanban/model/useKanban";
 import { useUpdateBulk } from "@/entities/kanban/model/useUpdateDrop";
 import type { RequestData } from "@/entities/kanban/model/DragType";
 import Tasks from "@/entities/kanban/ui/Tasks";
-// import { useState } from "react";
-
 export function TasksPage() {
-	// const [openModal, setOpenModal] = useState<boolean>(false);
 	const { id } = useParams();
 	const { data: idProject } = useKanban(id);
 	const { data, isLoading } = useTasks(idProject?.id);
@@ -18,6 +15,8 @@ export function TasksPage() {
 	const statuses = idProject?.us_statuses?.sort((a, b) => a.order - b.order) ?? [];
 	const handleDragEnd = (result: DropResult) => {
 		const { destination, source, draggableId } = result;
+		console.log(result);
+
 		if (!destination) return;
 		if (destination.droppableId === source.droppableId && destination.index === source.index) {
 			return;

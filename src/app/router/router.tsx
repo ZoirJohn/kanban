@@ -12,6 +12,7 @@ import {
 	Team,
 	TimeLine,
 } from "@/pages";
+
 export const router = createBrowserRouter([
 	{
 		path: "/",
